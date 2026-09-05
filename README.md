@@ -29,6 +29,9 @@ python-it-cloud-automation-lab/
 │   └── system_health.py
 ├── tests/
 │   └── test_system_health.py
+├── evidence/
+│   ├── system-health-report-preview.jpg
+│   └── pytest-results-preview.jpg
 └── reports/
     ├── sample-report.html
     └── sample-report.json
@@ -79,6 +82,16 @@ Portfolio samples:
 
 - [Sample HTML report](reports/sample-report.html)
 - [Sample JSON report](reports/sample-report.json)
+
+## Evidence
+
+### Generated HTML system health report
+
+![Generated HTML system health report](evidence/system-health-report-preview.jpg)
+
+### Automated test results
+
+![Pytest output showing three passing tests](evidence/pytest-results-preview.jpg)
 
 ## Automated Tests
 
