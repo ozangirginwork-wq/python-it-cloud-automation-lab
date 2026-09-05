@@ -1,0 +1,55 @@
+{
+    "timestamp": "2026-09-05T21:50:54+03:00",
+    "hostname": "Journey",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "cpu": {
+        "usage_percent": 16.1,
+        "status": "OK"
+    },
+    "memory": {
+        "usage_percent": 42.1,
+        "status": "OK"
+    },
+    "disk": {
+        "usage_percent": 18.7,
+        "status": "OK"
+    },
+    "network": {
+        "dns": {
+            "target": "microsoft.com",
+            "ip_address": "150.171.109.193",
+            "status": "OK"
+        },
+        "https": {
+            "target": "microsoft.com",
+            "port": 443,
+            "status": "OK"
+        }
+    },
+    "services": [
+        {
+            "display_name": "Windows Event Log",
+            "service_name": "EventLog",
+            "current_status": "running",
+            "status": "OK"
+        },
+        {
+            "display_name": "DNS Client",
+            "service_name": "Dnscache",
+            "current_status": "running",
+            "status": "OK"
+        },
+        {
+            "display_name": "Microsoft Defender",
+            "service_name": "WinDefend",
+            "current_status": "running",
+            "status": "OK"
+        }
+    ],
+    "event_log": {
+        "log_name": "Application",
+        "lookback_hours": 12,
+        "error_count": 1,
+        "status": "WARNING"
+    }
+}

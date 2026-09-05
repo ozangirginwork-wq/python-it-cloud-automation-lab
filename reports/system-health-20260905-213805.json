@@ -1,0 +1,55 @@
+{
+    "timestamp": "2026-09-05T21:38:05+03:00",
+    "hostname": "Journey",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "cpu": {
+        "usage_percent": 14.0,
+        "status": "OK"
+    },
+    "memory": {
+        "usage_percent": 40.2,
+        "status": "OK"
+    },
+    "disk": {
+        "usage_percent": 18.7,
+        "status": "OK"
+    },
+    "network": {
+        "dns": {
+            "target": "github.com",
+            "ip_address": "140.82.121.3",
+            "status": "OK"
+        },
+        "https": {
+            "target": "github.com",
+            "port": 443,
+            "status": "OK"
+        }
+    },
+    "services": [
+        {
+            "display_name": "Windows Event Log",
+            "service_name": "EventLog",
+            "current_status": "running",
+            "status": "OK"
+        },
+        {
+            "display_name": "DNS Client",
+            "service_name": "Dnscache",
+            "current_status": "running",
+            "status": "OK"
+        },
+        {
+            "display_name": "Microsoft Defender",
+            "service_name": "WinDefend",
+            "current_status": "running",
+            "status": "OK"
+        }
+    ],
+    "event_log": {
+        "log_name": "Application",
+        "lookback_hours": 24,
+        "error_count": 1,
+        "status": "WARNING"
+    }
+}
