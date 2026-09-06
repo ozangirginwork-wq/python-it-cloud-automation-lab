@@ -1,5 +1,7 @@
 # Python IT Operations Automation Toolkit
 
+![Python IT Operations Automation Lab thumbnail](docs/assets/python-it-automation-lab-thumbnail.svg)
+
 A Windows-focused Python automation toolkit that performs system health checks, validates network connectivity, monitors essential Windows services, reviews recent event-log errors, and generates JSON and HTML reports.
 
 ## Features
