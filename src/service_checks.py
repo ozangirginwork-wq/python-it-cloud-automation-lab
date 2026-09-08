@@ -10,6 +10,13 @@ SERVICES_TO_CHECK = {
 
 def check_service(display_name, service_name):
     """Check whether a Windows service is running."""
+    if not hasattr(psutil, "win_service_get"):
+        return {
+            "display_name": display_name,
+            "service_name": service_name,
+            "current_status": "unsupported platform",
+            "status": "FAILED",
+        }
     try:
         service = psutil.win_service_get(service_name)
         current_status = service.status()

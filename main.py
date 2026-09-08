@@ -26,7 +26,10 @@ def parse_arguments():
         help="Number of hours to examine in the Windows event log.",
     )
 
-    return parser.parse_args()
+    arguments = parser.parse_args()
+    if not 1 <= arguments.event_hours <= 8760:
+        parser.error("--event-hours must be between 1 and 8760")
+    return arguments
 
 
 def display_metric(name, details):
@@ -74,7 +77,7 @@ def main():
 
     https = network["https"]
     print(
-        f"HTTPS    : {https['target']}:{https['port']} "
+        f"TCP/443  : {https['target']}:{https['port']} "
         f"[{https['status']}]"
     )
 

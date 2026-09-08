@@ -7,9 +7,9 @@ A Windows-focused Python automation toolkit that performs system health checks, 
 ## Features
 
 - CPU, memory, and disk utilization monitoring
-- Configurable 80% warning threshold
+- 80% resource warning threshold, defined in `src/system_health.py`
 - DNS resolution testing
-- HTTPS port 443 connectivity testing
+- TCP port 443 reachability testing (does not validate TLS or HTTP responses)
 - Windows service monitoring
 - Windows Application event-log error detection
 - Timestamped JSON reports
@@ -70,8 +70,8 @@ python main.py --target microsoft.com --event-hours 12
 
 Available options:
 
-- `--target` selects the hostname used for DNS and HTTPS tests.
-- `--event-hours` selects how many hours of Windows Application events to inspect.
+- `--target` selects the hostname used for DNS and TCP/443 tests.
+- `--event-hours` selects 1–8760 hours of Windows Application events to inspect.
 
 ## Generated Reports
 
@@ -103,11 +103,7 @@ Run the test suite:
 python -m pytest -v
 ```
 
-Current result:
-
-```text
-3 passed
-```
+The original screenshot records the initial three-test suite. CI now also covers event-log failures and input validation; check the latest run for current results.
 
 ## Technologies
 
@@ -133,3 +129,9 @@ The toolkit performs read-only diagnostic checks. It does not modify services, e
 - Command-line interface development
 - Automated testing
 - Git version control
+
+## Related portfolio labs
+
+[Lab 1: Linux support & troubleshooting](https://github.com/ozangirginwork-wq/linux-it-support-troubleshooting-lab) · [Lab 2: Windows Server & Active Directory](https://github.com/ozangirginwork-wq/windows-server-active-directory-lab) · [Lab 4: AWS security incident investigation](https://github.com/ozangirginwork-wq/aws-security-incident-response-lab) · [Lab 5: Secure Terraform & CI security](https://github.com/ozangirginwork-wq/terraform-cicd-pipeline) · [Lab 6: AWS automated incident response](https://github.com/ozangirginwork-wq/aws-security-automated-incident-response)
+
+The event-log check distinguishes an empty result from a query failure. Access failures or missing PowerShell produce `FAILED` with an unknown count. Windows CI runs the regression suite; local tests mock event-log access and do not prove access to a real Windows event log.

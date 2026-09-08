@@ -119,7 +119,7 @@ def save_html_report(data, report_directory="reports"):
             {escape(str(data["network"]["dns"]["ip_address"]))}
             [{escape(data["network"]["dns"]["status"])}]
         </p>
-        <p><strong>HTTPS:</strong>
+        <p><strong>TCP/443 reachability:</strong>
             {escape(data["network"]["https"]["target"])}:443
             [{escape(data["network"]["https"]["status"])}]
         </p>
