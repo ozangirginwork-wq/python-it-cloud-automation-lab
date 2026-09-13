@@ -49,7 +49,10 @@ def check_recent_event_errors(hours=24):
                 "error": result.stderr.strip(),
             }
 
-        error_count = int(result.stdout.strip() or 0)
+        count_text = result.stdout.strip()
+        if not count_text.isascii() or not count_text.isdecimal():
+            raise ValueError("PowerShell did not return a non-negative event count")
+        error_count = int(count_text)
 
         return {
             "log_name": "Application",

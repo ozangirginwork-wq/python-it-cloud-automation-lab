@@ -30,7 +30,8 @@ python-it-cloud-automation-lab/
 │   ├── service_checks.py
 │   └── system_health.py
 ├── tests/
-│   └── test_system_health.py
+│   ├── test_system_health.py
+│   └── test_event_log_checks.py
 ├── evidence/
 │   ├── system-health-report-preview.jpg
 │   └── pytest-results-preview.jpg
@@ -105,6 +106,8 @@ python -m pytest -v
 
 The original screenshot records the initial three-test suite. CI now also covers event-log failures and input validation; check the latest run for current results.
 
+The event-log check distinguishes an empty result from a query failure. Access failures or missing PowerShell produce `FAILED` with an unknown count. Windows CI runs the regression suite; local tests mock event-log access and do not prove access to a real Windows event log.
+
 ## Technologies
 
 - Python
@@ -132,6 +135,9 @@ The toolkit performs read-only diagnostic checks. It does not modify services, e
 
 ## Related portfolio labs
 
-[Lab 1: Linux support & troubleshooting](https://github.com/ozangirginwork-wq/linux-it-support-troubleshooting-lab) · [Lab 2: Windows Server & Active Directory](https://github.com/ozangirginwork-wq/windows-server-active-directory-lab) · [Lab 4: AWS security incident investigation](https://github.com/ozangirginwork-wq/aws-security-incident-response-lab) · [Lab 5: Secure Terraform & CI security](https://github.com/ozangirginwork-wq/terraform-cicd-pipeline) · [Lab 6: AWS automated incident response](https://github.com/ozangirginwork-wq/aws-security-automated-incident-response)
-
-The event-log check distinguishes an empty result from a query failure. Access failures or missing PowerShell produce `FAILED` with an unknown count. Windows CI runs the regression suite; local tests mock event-log access and do not prove access to a real Windows event log.
+- [Lab 1: Linux support & troubleshooting](https://github.com/ozangirginwork-wq/linux-it-support-troubleshooting-lab)
+- [Lab 2: Windows Server & Active Directory](https://github.com/ozangirginwork-wq/windows-server-active-directory-lab)
+- [Lab 4: AWS security incident investigation](https://github.com/ozangirginwork-wq/aws-security-incident-response-lab)
+- [Lab 5: Secure Terraform & CI security](https://github.com/ozangirginwork-wq/terraform-cicd-pipeline)
+- [Lab 6: AWS automated incident response](https://github.com/ozangirginwork-wq/aws-security-automated-incident-response)
+- [Lab 7: Secure Kubernetes deployment & troubleshooting](https://github.com/ozangirginwork-wq/secure-kubernetes-deployment-lab)

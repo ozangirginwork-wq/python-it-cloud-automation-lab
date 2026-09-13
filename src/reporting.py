@@ -137,7 +137,7 @@ def save_html_report(data, report_directory="reports"):
         <h2>Windows Event Log</h2>
         <p>
             Errors in the last {data["event_log"]["lookback_hours"]} hours:
-            <strong>{data["event_log"]["error_count"]}</strong>
+            <strong>{"unknown" if data["event_log"]["error_count"] is None else data["event_log"]["error_count"]}</strong>
             [{escape(data["event_log"]["status"])}]
         </p>
     </div>

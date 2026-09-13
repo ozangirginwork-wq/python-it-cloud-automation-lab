@@ -38,7 +38,7 @@ def check_tcp_port(hostname, port, timeout=3):
 
 
 def collect_network_health(target="github.com"):
-    """Run DNS and secure web connectivity checks."""
+    """Run DNS and TCP/443 reachability checks; TLS and HTTP are not validated."""
     return {
         "dns": check_dns(target),
         "https": check_tcp_port(target, 443),

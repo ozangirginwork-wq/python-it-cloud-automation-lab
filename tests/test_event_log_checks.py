@@ -30,3 +30,10 @@ def test_successful_event_count(count, status):
         result = check_recent_event_errors()
     assert result['status'] == status
     assert result['error_count'] == int(count)
+
+@pytest.mark.parametrize('output', ['', '  ', '-1', 'unexpected output'])
+def test_invalid_success_output_is_not_reported_as_healthy(output):
+    with patch('src.event_log_checks.subprocess.run', return_value=SimpleNamespace(returncode=0, stdout=output, stderr='')):
+        result = check_recent_event_errors()
+    assert result['status'] == 'FAILED'
+    assert result['error_count'] is None

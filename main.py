@@ -16,7 +16,7 @@ def parse_arguments():
     parser.add_argument(
         "--target",
         default="github.com",
-        help="Hostname used for DNS and HTTPS tests.",
+        help="Hostname used for DNS and TCP port 443 reachability tests.",
     )
 
     parser.add_argument(
