@@ -4,6 +4,14 @@
 
 A Windows-focused Python automation toolkit that performs system health checks, validates network connectivity, monitors essential Windows services, reviews recent event-log errors, and generates JSON and HTML reports.
 
+## Evidence highlights
+
+[View three selected screenshots with captions](evidence/highlights/README.md) from the original lab work, cropped and reviewed for privacy. These historical captures were curated on September 25, 2026; they are not new test runs.
+
+![HTML health report](evidence/highlights/01-html-health-report.png)
+
+*The original HTML report displays resource use, DNS/TCP checks and Windows service states. The historical HTTPS label means TCP/443 reachability, not a TLS or HTTP test.*
+
 ## Features
 
 - CPU, memory, and disk utilization monitoring
